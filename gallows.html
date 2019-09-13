@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+	 <title>ВИСЕЛИЦА</title>
+</head>
+<body>
+    <script>
+var words = [
+    "программа",
+	"мишка",
+	"винтовка",
+	"мама",
+	"папа"
+];
+
+var word = words[Math.floor(Math.random() * words.length)];
+
+var otvet = [];
+for (var i = 0; i < words.length; i++) {
+    otvet[i] = "_";
+	}
+	
+var ostalos	= words.length;
+
+while (ostalos > 0) {
+
+//основной код
+
+alert(otvet.join(" "));
+
+var predlogenie = prompt("Угадайте букву или нажмите Отмена для выхода из игры!");
+if (predlogenie === null) {
+    break;
+}   else if (predlogenie.length !== 1) {
+    alert("Пожайлустa введите только ОДНУ БУКВУ!");
+}   else {
+
+for (var j = 0; j < word.length; j ++) {
+    if (word[j] === predlogenie) {
+        otvet[j] = 	predlogenie;
+		ostalos--;
+		}
+	}
+}
+
+}alert(otvet.join(" "))
+alert ("ВЫ УГАДАЛИ!!! СЛОВО " + word);
+	</script>
+</body>
+</html>
